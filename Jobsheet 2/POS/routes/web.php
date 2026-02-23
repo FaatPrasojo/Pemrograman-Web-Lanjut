@@ -28,4 +28,9 @@ Route::prefix('category')->group(function () {
 
 use App\Http\Controllers\UserController;
 
-Route::get('/user/{id}/name/{name}', [UserController::class, 'show']);
+Route::get('/{id}/name/{name}', [UserController::class, 'show']);
+
+use App\Http\Controllers\SalesController;
+
+Route::get('/sales', [SalesController::class, 'index']);
+Route::post('/sales/process', [SalesController::class, 'process'])->name('sales.process');

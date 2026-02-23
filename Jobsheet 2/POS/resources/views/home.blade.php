@@ -11,7 +11,11 @@
         </ul>
         <hr>
         <h2>User</h2>
-        <ul><a href="{{ url('/user/244107020142/name/Prasojo') }}">Profile User</a></ul>
+        <ul><a href="{{ url('/244107020142/name/Prasojo') }}">Profile User</a></ul>
+
+        <hr>
+        <h2>Transaksi</h2>
+        <ul><a href="{{ url('/sales') }}">Pembayaran</a></ul>
     </body>
 </html>
 
