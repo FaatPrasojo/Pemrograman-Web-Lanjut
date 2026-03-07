@@ -2,11 +2,21 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class LevelModel extends Model
 {
-    protected $table = 'm_level';
+    use HasFactory;
+
+    protected $table      = 'm_level';
     protected $primaryKey = 'level_id';
-    protected $fillable = ['level_kode', 'level_nama']; // Izinkan pengisian kolom ini
+
+    protected $fillable = ['level_kode', 'level_nama'];
+
+    // Relasi: satu level memiliki banyak user
+    public function user()
+    {
+        return $this->hasMany(UserModel::class, 'level_id', 'level_id');
+    }
 }
